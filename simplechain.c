@@ -18,7 +18,7 @@ int main (int argc, char *argv[]) {
             break;
             
             case'p':
-            numProcs = atoi(optarg)
+            numProcs = atoi(optarg);
             break;
             
             case'c':
