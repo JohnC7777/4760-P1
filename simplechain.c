@@ -27,6 +27,7 @@ int main (int argc, char *argv[]) {
                 printf(“unknown option: %c\n”, optopt);
                 break; 
         } 
+       
     } 
 
    if (argc != 2) {
