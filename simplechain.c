@@ -6,6 +6,7 @@ int main (int argc, char *argv[]) {
    pid_t childpid = 0;
    int i, n;
    int opt;
+   int numProcs=4;
    
    while((opt = getopt(argc, argv, "hp:c:s:i:")) != -1)
    {
@@ -17,7 +18,7 @@ int main (int argc, char *argv[]) {
             break;
             
             case'p':
-            printf("Help Message");
+            numProcs = atoi(optarg)
             break;
             
             case'c':
@@ -38,7 +39,7 @@ int main (int argc, char *argv[]) {
       fprintf(stderr, "Usage: %s processes\n",argv[0]);
       return 1;
    }
-   n = atoi(argv[1]);
+   n = numProcs;
    for (i = 1; i < n; i++)
       if (childpid = fork())
          break;
