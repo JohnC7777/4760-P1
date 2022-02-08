@@ -5,6 +5,7 @@
 int main (int argc, char *argv[]) {
    pid_t childpid = 0;
    int i, n;
+   int opt;
    
     while((opt = getopt(argc, argv, “:if:lrx”)) != -1) 
     { 
