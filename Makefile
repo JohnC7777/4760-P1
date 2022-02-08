@@ -1,13 +1,13 @@
 CC		= gcc
 CFLAGS		= -g
-TARGET		= dt
-OBJECTS		= dt.o
+TARGET		= chain
+OBJECTS		= simplechain.o
 .SUFFIXES: .c .o
 
 $(TARGET): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS)
 
-.c.o: dt.c
+.c.o: simplechain.c
 	$(CC) $(CFLAGS) -c $<
 
 .PHONY: clean
