@@ -10,6 +10,7 @@ int main (int argc, char *argv[]) {
    int numChars=80;
    int sleeptime=3;
    int niters=0;
+   char str[]="chain: Error: ";
    
    while((opt = getopt(argc, argv, "hp:c:s:i:")) != -1)
    {
@@ -38,13 +39,15 @@ int main (int argc, char *argv[]) {
       }
    }
    
-  char mybuf[numChars];
+  /*char mybuf[numChars];*/
    
    
    n = numProcs;
-   for (i = 1; i < n; i++)
+   for (i = 1; i < n; i++){
+      void perror(const char *str);
       if (childpid = fork())
          break;
+   }
    
    for(i = 1; i < niters; ++i){
       sleep(sleeptime);
