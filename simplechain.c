@@ -35,10 +35,7 @@ int main (int argc, char *argv[]) {
       }
    }
    
-   if (argc != 2) {
-      fprintf(stderr, "Usage: %s processes\n",argv[0]);
-      return 1;
-   }
+  
    n = numProcs;
    for (i = 1; i < n; i++)
       if (childpid = fork())
