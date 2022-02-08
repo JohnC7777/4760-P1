@@ -7,11 +7,28 @@ int main (int argc, char *argv[]) {
    int i, n;
    int opt;
    
-   while((opt = getopt(argc, argv, "h")) != -1)
+   while((opt = getopt(argc, argv, "hp:c:s:i:")) != -1)
    {
       switch(opt)
       {
             case'h':
+            printf("Help Message");
+            return 0;
+            break;
+            
+            case'p':
+            printf("Help Message");
+            break;
+            
+            case'c':
+            printf("Help Message");
+            break;
+            
+            case's':
+            printf("Help Message");
+            break;
+            
+            case'i':
             printf("Help Message");
             break;
       }
