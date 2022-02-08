@@ -38,7 +38,9 @@ int main (int argc, char *argv[]) {
       }
    }
    
-  
+  char mybuf[numChars];
+   
+   
    n = numProcs;
    for (i = 1; i < n; i++)
       if (childpid = fork())
