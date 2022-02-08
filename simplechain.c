@@ -7,6 +7,9 @@ int main (int argc, char *argv[]) {
    int i, n;
    int opt;
    int numProcs=4;
+   int numChars=80;
+   int sleeptime=3;
+   int niters;
    
    while((opt = getopt(argc, argv, "hp:c:s:i:")) != -1)
    {
@@ -22,7 +25,7 @@ int main (int argc, char *argv[]) {
             break;
             
             case'c':
-            printf("Help Message");
+            numChars = atoi(optarg);
             break;
             
             case's':
@@ -40,6 +43,8 @@ int main (int argc, char *argv[]) {
    for (i = 1; i < n; i++)
       if (childpid = fork())
          break;
+   
+   sleep(10);
 
    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
       i, (long)getpid(), (long)getppid(), (long)childpid);
