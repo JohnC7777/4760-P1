@@ -44,7 +44,7 @@ int main (int argc, char *argv[]) {
    
    n = numProcs;
    for (i = 1; i < n; i++){
-      void perror(const char *str);
+      //void perror(const char *str);
       if (childpid = fork())
          break;
    }
