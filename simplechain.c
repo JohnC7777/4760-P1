@@ -44,9 +44,13 @@ int main (int argc, char *argv[]) {
    
    n = numProcs;
    for (i = 1; i < n; i++){
-      perror("chain: Error:");
-      if (childpid = fork())
+      if (childpid = fork()){
          break;
+      }
+      else if(childpid == -1){
+         perror("chain: Error:");
+         return 1;
+      }
    }
    
    for(i = 1; i < niters; ++i){
