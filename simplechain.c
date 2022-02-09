@@ -82,7 +82,7 @@ int main (int argc, char *argv[]) {
    for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
       
-      mybuf[i]=myChar;
+      mybuf[i-1]=myChar;
       
       fprintf(stderr,"Next char is: %c \n",myChar);
       
