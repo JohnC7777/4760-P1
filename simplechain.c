@@ -51,11 +51,11 @@ int main (int argc, char *argv[]) {
          return 1;
       }
    }
-   
+   /*
    for(i = 1; i < niters; ++i){
       sleep(sleeptime);
    }
-/*
+
    char myChar;
    for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
@@ -65,7 +65,7 @@ int main (int argc, char *argv[]) {
    
    */
    
-   
+   sleep(10);
    
    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
       i, (long)getpid(), (long)getppid(), (long)childpid);
