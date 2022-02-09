@@ -41,12 +41,13 @@ int main (int argc, char *argv[]) {
    
   /*char mybuf[numChars];*/
    
-   
    n = numProcs;
    for (i = 1; i < n; i++){
       if (childpid = fork()){
          break;
       }
+      
+      
       else if(childpid == -1){
          perror("chain: Error:");
          return 1;
@@ -57,6 +58,16 @@ int main (int argc, char *argv[]) {
       sleep(sleeptime);
    }
 
+   for(int i=0; i<numChars; i++){
+      scanf("",);
+      
+   }
+   
+   
+   
+   
+   
+   
    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
       i, (long)getpid(), (long)getppid(), (long)childpid);
 
