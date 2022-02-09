@@ -75,7 +75,7 @@ int main (int argc, char *argv[]) {
    char myChar;
    int offset=numChars*processId;
       
-   fseek(stdin, offset, SEEK_SET);
+   fseek(stdin, 0, SEEK_SET);
       
    for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
