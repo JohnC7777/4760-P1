@@ -42,6 +42,29 @@ Are you able to execute with a value of n as 100?"
 integers displayed. Only the last one should output a newline. What happens when you run this program? Can you tell
 which process generated each part of the output? Run the program several times and see if there is a difference in the
 output."
+--Program runs but there are many inconsistencies between tests. 
+For example:
+
+Test 1:
+i:1i:3055 process ID:139676878031307parent ID:22877child ID:3056
+i:1i:3056 process ID:3parent ID:1child ID:3057
+i:1i:3057 process ID:3parent ID:1child ID:3058
+i:1i:3058 process ID:3parent ID:1child ID:3059
+
+Test 2:
+i:1i:3080 process ID:140311343880651parent ID:22877child ID:3081
+i:1i:3081 process ID:3parent ID:1child ID:3082
+i:1i:3082 process ID:3parent ID:1child ID:3083
+i:1i:1i:3083 process ID:3i:3084 process ID:3parent ID:1child ID:3084
+
+--There are duplicate 'i:1', there are two process ID statements in the last line of Test 2.
+
+
+
+
+
+
+
 
 8:"Modify your code by replacing the final fprintf statement with a loop that reads nchars characters from stdin one
 character at a time, and puts them in an array called mybuf. The values of n and nchars should be passed as command
