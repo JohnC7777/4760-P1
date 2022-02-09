@@ -76,7 +76,7 @@ int main (int argc, char *argv[]) {
       return 1;
    }
    
-   for(j = 1; j <= niters; ++j){
+   for(j = 1; j <= niters; j++){
       
 
       char myChar;
