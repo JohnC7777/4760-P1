@@ -49,6 +49,14 @@ int main (int argc, char *argv[]) {
    for (i = 1; i < n; i++){
       if (childpid = fork()){
          
+          int result=0;
+   
+         if(waitpid(childpid,&result,0)==-1){
+            printf("%s: ",argv[0]);
+             perror("error: ");
+            return 1;
+         }
+         
          break; //Parent process
       }
       
@@ -68,13 +76,7 @@ int main (int argc, char *argv[]) {
    
    
    
-   int result=0;
-   
-   if(waitpid(childpid,&result,0)==-1){
-      printf("%s: ",argv[0]);
-       perror("error: ");
-      return 1;
-   }
+ 
    
    for(j = 1; j <= niters; j++){
       
