@@ -55,7 +55,7 @@ int main (int argc, char *argv[]) {
    for(i = 1; i < niters; ++i){
       sleep(sleeptime);
    }
-
+/*
    char myChar;
    for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
@@ -63,7 +63,7 @@ int main (int argc, char *argv[]) {
    }
    
    
-   
+   */
    
    
    
