@@ -39,8 +39,6 @@ int main (int argc, char *argv[]) {
       }
    }
    
-  /*char mybuf[numChars];*/
-   
    n = numProcs;
    for (i = 1; i < n; i++){
       if (childpid = fork()){
@@ -59,7 +57,7 @@ int main (int argc, char *argv[]) {
    }
 
    char myChar;
-   for(i = 0; i<numChars; i++){
+   for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
       printf("char is: %c",myChar);
    }
