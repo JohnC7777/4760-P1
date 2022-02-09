@@ -13,7 +13,6 @@ int main (int argc, char *argv[]) {
    int niters=1;
    int processId=0;
    
-   char str[]="chain: Error: ";
    
    
    //***GETOPT***
@@ -56,7 +55,7 @@ int main (int argc, char *argv[]) {
       
       else if(childpid == -1){
          printf("%s: ",argv[0]);
-         perror("chain: Error:");
+         perror("error: ");
          return 1;
       }
       else{
@@ -69,7 +68,7 @@ int main (int argc, char *argv[]) {
    
    if(waitpid(childpid,&result,0)==-1){
       printf("%s: ",argv[0]);
-       perror("chain: Error:");
+       perror("error: ");
       return 1;
    }
    
