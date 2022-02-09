@@ -5,7 +5,7 @@
 int main (int argc, char *argv[]) {
    //***VARIABLE DECLARATION***
    pid_t childpid = 0;
-   int i, n;
+   int i, n, j;
    int opt;
    int numProcs=4;
    int numChars=80;
@@ -55,6 +55,7 @@ int main (int argc, char *argv[]) {
       
       
       else if(childpid == -1){
+         printf("%s: ",argv[0]);
          perror("chain: Error:");
          return 1;
       }
@@ -65,7 +66,12 @@ int main (int argc, char *argv[]) {
    }
    
    int result;
-   waitpid(childpid,&result,0);
+   
+   if(waitpid(childpid,&result,0)==-1){
+      printf("%s: ",argv[0]);
+       perror("chain: Error:");
+      return 1;
+   }
    
    for(i = 1; i <= niters; ++i){
       
@@ -76,10 +82,10 @@ int main (int argc, char *argv[]) {
       fseek(stdin, offset, SEEK_SET);
       }
        char mybuf[numChars+1];
-      for(i = 1; i<=numChars; i++){
+      for(j = 1; j<=numChars; j++){
          myChar =getc(stdin);
 
-         mybuf[i-1]=myChar;
+         mybuf[j-1]=myChar;
       }
 
       mybuf[numChars]='\0';
