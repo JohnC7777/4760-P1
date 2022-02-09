@@ -63,31 +63,31 @@ int main (int argc, char *argv[]) {
          processId=processId-1;
       }
    }
-   
+   waitpid(childpid,&result,0);
    for(i = 1; i <= niters; ++i){
       
-   int result;
-   waitpid(childpid,&result,0);
-   
-   char myChar;
-   int offset=(numChars)*processId*niters;
-   if(i==1){   
-   fseek(stdin, offset, SEEK_SET);
-   }
-    char mybuf[numChars+1];
-   for(i = 1; i<=numChars; i++){
-      myChar =getc(stdin);
-      
-      mybuf[i-1]=myChar;
-   }
-   
-   mybuf[numChars]='\0';
-      
-   sleep(sleeptime);
-      
-   //***PRINT RESULTS***
-   fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld mybuf:%s\n",
-      i, (long)getpid(), (long)getppid(), (long)childpid, mybuf);
+      int result;
+
+
+      char myChar;
+      int offset=(numChars)*processId*niters;
+      if(i==1){   
+      fseek(stdin, offset, SEEK_SET);
+      }
+       char mybuf[numChars+1];
+      for(i = 1; i<=numChars; i++){
+         myChar =getc(stdin);
+
+         mybuf[i-1]=myChar;
+      }
+
+      mybuf[numChars]='\0';
+
+      sleep(sleeptime);
+
+      //***PRINT RESULTS***
+      fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld mybuf:%s\n",
+         i, (long)getpid(), (long)getppid(), (long)childpid, mybuf);
    }
    
    /*   USED FOR #7
