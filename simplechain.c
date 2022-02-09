@@ -47,20 +47,17 @@ int main (int argc, char *argv[]) {
    processId = numProcs-1;
    
    for (i = 1; i < n; i++){
-      if (childpid = fork()){
+      if (childpid = fork()){   //FORK
          
           int result=0;
    
-         if(waitpid(childpid,&result,0)==-1){
+         if(waitpid(childpid,&result,0)==-1){     //WAIT
             printf("%s: ",argv[0]);
              perror("error: ");
             return 1;
          }
-         
          break; //Parent process
       }
-      
-      
       else if(childpid == -1){
          printf("%s: ",argv[0]);
          perror("error: ");
@@ -71,44 +68,28 @@ int main (int argc, char *argv[]) {
          processId=processId-1;
       }
    }
-   
-   
-   
-   
-   
  
    
-   for(j = 1; j <= niters; j++){
-      
-
+   for(j = 1; j <= niters; j++){     //ITERATIONS FROM I
       char myChar;
       int offset=(numChars)*processId*niters;
+      
       if(j==1){   
       fseek(stdin, offset, SEEK_SET);
       }
-       char mybuf[numChars+1];
+      
+      char mybuf[numChars+1];
       for(i = 1; i<=numChars; i++){
          myChar =getc(stdin);
-
          mybuf[i-1]=myChar;
       }
 
       mybuf[numChars]='\0';
-
       sleep(sleeptime);
 
       //***PRINT RESULTS***
       fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld mybuf:%s\n",
          j, (long)getpid(), (long)getppid(), (long)childpid, mybuf);
    }
-   
-   /*   USED FOR #7
-   fprintf(stderr, "i:%d", i);
-   fprintf(stderr, "i:%d process ID:%ld", (long)getpid());
-   fprintf(stderr, "parent ID:%ld", (long)getppid());
-   fprintf(stderr, "child ID:%ld\n", (long)childpid);
-   */
-   
-   
    return 0;
 }
