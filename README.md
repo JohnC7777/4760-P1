@@ -6,8 +6,14 @@ John Citrowske
 Version Control: https://github.com/JohnC7777/4760-P1
 
 
-***NOTES**
+***HOW TO RUN**
+1. make:  type "make" and press enter
+2. run: type "./chain" followed by parameters
 
+example:
+./chain -p 2 -c 5 -s 2 -i 4 < example.txt
+
+type "./chain -h"  for help
 
 
 
@@ -61,14 +67,19 @@ i:1i:1i:3083 process ID:3i:3084 process ID:3parent ID:1child ID:3084
 
 
 
-
-
-
-
-
 8:"Modify your code by replacing the final fprintf statement with a loop that reads nchars characters from stdin one
 character at a time, and puts them in an array called mybuf. The values of n and nchars should be passed as command
 line options. After the loop, put a ’\0’ character in index nchars of the array so that it contains a string. Output the
 PID of the process followed by a colon, a space, the string in mybuf, and a newline to stderr in a single fprintf.
 Run the program for several values of n and nchars. Observe the results. Redirect the stdin from a file with some
 text that should be enough to make sure that all the processes terminate normally (more than n ×nchars characters)."
+-- Program outputs process ID, parent ID, child ID, and mybuf. I noticed that when I have p, s, and i set to higher numbers it will take a while to compute. time to compute is p*s*i. I noticed the program reached the end of file for example.txt so it output gibberish.
+
+i:1 process ID:6191 parent ID:6190 child ID:0 mybuf:Lorem
+
+
+
+
+
+
+
