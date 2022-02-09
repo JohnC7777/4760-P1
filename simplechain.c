@@ -63,11 +63,12 @@ int main (int argc, char *argv[]) {
          processId=processId-1;
       }
    }
+   
+   int result;
    waitpid(childpid,&result,0);
+   
    for(i = 1; i <= niters; ++i){
       
-      int result;
-
 
       char myChar;
       int offset=(numChars)*processId*niters;
