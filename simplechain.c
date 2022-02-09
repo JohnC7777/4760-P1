@@ -83,9 +83,6 @@ int main (int argc, char *argv[]) {
       myChar =getc(stdin);
       
       mybuf[i-1]=myChar;
-      
-      fprintf(stderr,"Next char is: %c \n",myChar);
-      
    }
    
    mybuf[numChars]='\0';
