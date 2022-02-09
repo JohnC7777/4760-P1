@@ -70,7 +70,8 @@ int main (int argc, char *argv[]) {
    }
 
    
-   
+   int result;
+   waitpid(childpid,&result,0);
    
    char myChar;
    int offset=numChars*processId;
@@ -85,8 +86,6 @@ int main (int argc, char *argv[]) {
    //USED FOR #4
    //sleep(10);
    
-   //USED FOR #6
-   //while(wait(NULL)>0);
    
    //***PRINT RESULTS***
    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
