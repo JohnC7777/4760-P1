@@ -58,9 +58,10 @@ int main (int argc, char *argv[]) {
       sleep(sleeptime);
    }
 
+   char myChar;
    for(int i=0; i<numChars; i++){
-      scanf("",);
-      
+      myChar =getc(stdin);
+      printf("char is: %c",myChar)
    }
    
    
