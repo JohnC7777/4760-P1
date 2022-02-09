@@ -59,9 +59,9 @@ int main (int argc, char *argv[]) {
    }
 
    char myChar;
-   for(int i=0; i<numChars; i++){
+   for(i = 0; i<numChars; i++){
       myChar =getc(stdin);
-      printf("char is: %c",myChar)
+      printf("char is: %c",myChar);
    }
    
    
