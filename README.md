@@ -34,8 +34,18 @@ i:4 process ID:930 parent ID:929 child ID:0
 5:"Put a loop around the final fprintf in your code. Have the loop execute k times. Put sleep(m); inside this loop just before the fprintf statement. Pass k and m using command line options.(I think there was a typo in the P1 prompt. I think it meant s and i) Run the program for several values of n, k, and m. Observe the results."
 ---Ran the program several times with several different values. time it takes seems to be k*m (s*i) so as long as those are fairly small the program wont take too long. also ran with several values for n
 
-6:
+6"Modify the code by adding the wait function call before the final fprintf statement. How does this affect the output of the program?
+Are you able to execute with a value of n as 100?"
+--waits until the child processes exits. After child process terminates, parent continues its execution after wait system call instruction. results are in different order than before. results appear top down and are in perfect order. n=100 executes with 28 processes
 
-7:
+7:"Modify your code by replacing the final fprintf statement with four fprintf statements, one each for the four
+integers displayed. Only the last one should output a newline. What happens when you run this program? Can you tell
+which process generated each part of the output? Run the program several times and see if there is a difference in the
+output."
 
-8:
+8:"Modify your code by replacing the final fprintf statement with a loop that reads nchars characters from stdin one
+character at a time, and puts them in an array called mybuf. The values of n and nchars should be passed as command
+line options. After the loop, put a ’\0’ character in index nchars of the array so that it contains a string. Output the
+PID of the process followed by a colon, a space, the string in mybuf, and a newline to stderr in a single fprintf.
+Run the program for several values of n and nchars. Observe the results. Redirect the stdin from a file with some
+text that should be enough to make sure that all the processes terminate normally (more than n ×nchars characters)."
