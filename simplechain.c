@@ -84,7 +84,7 @@ int main (int argc, char *argv[]) {
       for(j = 1; j<=numChars; j++){
          myChar =getc(stdin);
 
-         mybuf[j-1]=myChar;
+         mybuf[i-1]=myChar;
       }
 
       mybuf[numChars]='\0';
