@@ -81,7 +81,7 @@ int main (int argc, char *argv[]) {
       fseek(stdin, offset, SEEK_SET);
       }
        char mybuf[numChars+1];
-      for(j = 1; j<=numChars; j++){
+      for(i = 1; i<=numChars; i++){
          myChar =getc(stdin);
 
          mybuf[i-1]=myChar;
