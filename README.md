@@ -21,6 +21,7 @@ Version Control: https://github.com/JohnC7777/4760-P1
 
 3: "Experiment with different values for the number of processes up to a maximum of 100 processes. Observe the fraction
 that are adopted by init."
+---There were approximately 23 orphans adopted by INIT in this test
 
 4:
 
