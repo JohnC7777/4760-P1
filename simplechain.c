@@ -64,7 +64,11 @@ int main (int argc, char *argv[]) {
       }
    }
    
-   int result;
+   
+   
+   
+   
+   int result=0;
    
    if(waitpid(childpid,&result,0)==-1){
       printf("%s: ",argv[0]);
