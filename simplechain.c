@@ -88,6 +88,8 @@ int main (int argc, char *argv[]) {
       
    }
    
+   mybuf[numChars]='\0';
+   
    //USED FOR #4
    //sleep(10);
    
