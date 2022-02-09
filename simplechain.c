@@ -10,7 +10,7 @@ int main (int argc, char *argv[]) {
    int numProcs=4;
    int numChars=80;
    int sleeptime=3;
-   int niters=0;
+   int niters=1;
    int processId=0;
    
    char str[]="chain: Error: ";
