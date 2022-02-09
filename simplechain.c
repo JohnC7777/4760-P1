@@ -75,7 +75,7 @@ int main (int argc, char *argv[]) {
    waitpid(childpid,&result,0);
    
    char myChar;
-   int offset=(numChars-1)*processId;
+   int offset=(numChars)*processId;
       
    fseek(stdin, offset, SEEK_SET);
     char mybuf[numChars+1];
