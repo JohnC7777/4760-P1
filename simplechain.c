@@ -86,7 +86,7 @@ int main (int argc, char *argv[]) {
    //sleep(10);
    
    //USED FOR #6
-   //wait();
+   wait();
    
    //***PRINT RESULTS***
    fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
