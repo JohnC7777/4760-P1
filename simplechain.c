@@ -72,12 +72,12 @@ int main (int argc, char *argv[]) {
       return 1;
    }
    
-   for(i = 1; i <= niters; ++i){
+   for(j = 1; j <= niters; ++j){
       
 
       char myChar;
       int offset=(numChars)*processId*niters;
-      if(i==1){   
+      if(j==1){   
       fseek(stdin, offset, SEEK_SET);
       }
        char mybuf[numChars+1];
@@ -93,7 +93,7 @@ int main (int argc, char *argv[]) {
 
       //***PRINT RESULTS***
       fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld mybuf:%s\n",
-         i, (long)getpid(), (long)getppid(), (long)childpid, mybuf);
+         j, (long)getpid(), (long)getppid(), (long)childpid, mybuf);
    }
    
    /*   USED FOR #7
