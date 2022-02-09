@@ -11,7 +11,9 @@ int main (int argc, char *argv[]) {
    int numChars=80;
    int sleeptime=3;
    int niters=0;
+   int processId=0;
    char str[]="chain: Error: ";
+   
    
    //***GETOPT***
    while((opt = getopt(argc, argv, "hp:c:s:i:")) != -1)
@@ -42,15 +44,22 @@ int main (int argc, char *argv[]) {
    }
    
    n = numProcs;
+   processId = numProcs;
+   
    for (i = 1; i < n; i++){
       if (childpid = fork()){
-         break;
+         
+         break; //Parent process
       }
       
       
       else if(childpid == -1){
          perror("chain: Error:");
          return 1;
+      }
+      else{
+          //child process
+         processId=processId-1;
       }
    }
    
@@ -64,6 +73,10 @@ int main (int argc, char *argv[]) {
    
    
    char myChar;
+   int offset=numChars*processId;
+      
+   int fseek(stdin, offset, SEEK_SET)
+      
    for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
       printf("Next char is: %c \n",myChar);
