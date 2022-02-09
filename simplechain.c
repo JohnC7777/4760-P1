@@ -12,6 +12,7 @@ int main (int argc, char *argv[]) {
    int sleeptime=3;
    int niters=0;
    int processId=0;
+   
    char str[]="chain: Error: ";
    
    
@@ -76,11 +77,15 @@ int main (int argc, char *argv[]) {
    char myChar;
    int offset=numChars*processId;
       
-   fseek(stdin, offset, SEEK_SET);
+   fseek(stdin, offset-1, SEEK_SET);
       
    for(i = 1; i<numChars; i++){
       myChar =getc(stdin);
+      
+      mybuf[i]=myChar;
+      
       fprintf(stderr,"Next char is: %c \n",myChar);
+      
    }
    
    //USED FOR #4
@@ -88,8 +93,8 @@ int main (int argc, char *argv[]) {
    
    
    //***PRINT RESULTS***
-   fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld\n",
-      i, (long)getpid(), (long)getppid(), (long)childpid);
+   fprintf(stderr, "i:%d process ID:%ld parent ID:%ld child ID:%ld mybuf:%s\n",
+      i, (long)getpid(), (long)getppid(), (long)childpid, mybuf);
     
    
    
