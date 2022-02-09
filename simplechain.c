@@ -44,7 +44,7 @@ int main (int argc, char *argv[]) {
    }
    
    n = numProcs;
-   processId = numProcs;
+   processId = numProcs-1;
    
    for (i = 1; i < n; i++){
       if (childpid = fork()){
